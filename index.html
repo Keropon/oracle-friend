@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700;900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Secret Santa</title>
+</head>
+
+<body>
+    <main class="main-content">
+        <header class="header-banner">
+            <h1 class="main-title">Secret Santa</h1>
+            <img src="assets/secret-santa.jpg" alt="Secret Santa representative image">
+        </header>
+        
+        <section class="input-section">
+            <h2 class="section-title">Enter your friends' names</h2>
+            <div class="input-wrapper">
+                <input type="text" id="friend" class="input-name" placeholder="Type a name">
+                <button class="button-add" onclick="addFriend()">
+                    <svg class="button-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor"/>
+                    </svg>
+                    Add New Name
+                </button>
+            </div>
+           
+            <ul id="friendsList" class="name-list" aria-labelledby="friendsList" role="list"></ul>
+            <ul id="result" class="result-list" aria-live="polite"></ul>
+
+            <div class="button-container">
+                <button class="button-draw" onclick="drawFriend()" aria-label="Draw secret santa">
+                    <svg class="button-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g transform="rotate(45, 12, 12)">
+                            <rect x="4" y="4" width="16" height="16" rx="3" fill="currentColor"/>
+                            <circle cx="8" cy="8" r="1.5" fill="var(--color-secondary)"/>
+                            <circle cx="16" cy="8" r="1.5" fill="var(--color-secondary)"/>
+                            <circle cx="12" cy="12" r="1.5" fill="var(--color-secondary)"/>
+                            <circle cx="8" cy="16" r="1.5" fill="var(--color-secondary)"/>
+                            <circle cx="16" cy="16" r="1.5" fill="var(--color-secondary)"/>
+                        </g>
+                    </svg>
+                    Draw name
+                </button>
+                <br/>
+                <button class="button-draw" onclick="resetGame()" aria-label="Reset game">
+                    <svg class="button-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 5V1L7 6L12 11V7C15.31 7 18 9.69 18 13C18 16.31 15.31 19 12 19C8.69 19 6 16.31 6 13H4C4 17.42 7.58 21 12 21C16.42 21 20 17.42 20 13C20 8.58 16.42 5 12 5Z" fill="currentColor"/>
+                    </svg>
+                    Reset game
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js" defer></script>
+</body>
+</html>
